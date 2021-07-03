@@ -7,11 +7,10 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import useToggle from 'hooks/useToggle';
 import ThemeSwitchButton from 'components/themeSwitchButton';
+import Sidebar from 'components/sidebar';
 
 interface Props {
   window?: () => Window;
@@ -53,10 +52,6 @@ export default function Navbar(props: Props) {
         <AppBar>
           <Container maxWidth="lg" style={{ display: 'flex', alignItems: 'center' }}>
             <Toolbar style={{ flexGrow: 1 }}>
-              <IconButton edge="start" color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
-
               <Typography variant="h6" style={{ flexGrow: 1 }}>
                 React Material-UI Templates
               </Typography>
@@ -67,7 +62,8 @@ export default function Navbar(props: Props) {
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" id="layout">
+        <Sidebar />
         <Box my={4}>{props.children}</Box>
       </Container>
     </ThemeProvider>
