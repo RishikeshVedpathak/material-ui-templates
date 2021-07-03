@@ -19,17 +19,7 @@ export default function Sidebar() {
             anchor="left"
             open={drawerOpen}
             onClose={() => setDrawerOpen(false)}
-            ModalProps={{
-              container: document.getElementById('layout'),
-              style: { position: 'absolute' },
-            }}
-            PaperProps={{
-              style: {
-                position: 'absolute',
-                // width: fullWidth ? '100%' : 'auto',
-                boxShadow: '-10px 1px 22px -8px rgba(0,0,0,0.32)',
-              },
-            }}
+
           >
             <Box>
               <MenuItems />

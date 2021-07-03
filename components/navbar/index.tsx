@@ -62,7 +62,7 @@ export default function Navbar(props: Props) {
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container maxWidth="lg" id="layout">
+      <Container maxWidth="lg">
         <Sidebar />
         <Box my={4}>{props.children}</Box>
       </Container>
