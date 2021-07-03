@@ -1,9 +1,9 @@
-import Navbar from 'components/navbar';
+import Layout from 'components/Layout';
 
 export default function Signup() {
   return (
-    <Navbar>
+    <Layout>
       <div>Sign up Page</div>
-    </Navbar>
+    </Layout>
   );
 }

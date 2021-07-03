@@ -28,7 +28,7 @@ function HideOnScroll(props: Props) {
   );
 }
 
-export default function Navbar(props: Props) {
+export default function Layout(props: Props) {
   const [darkMode, setDarkMode] = useToggle(true);
 
   const theme = useMemo(
@@ -62,9 +62,9 @@ export default function Navbar(props: Props) {
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{ display: 'flex', flex: 1 }}>
         <Sidebar />
-        <Box my={4}>{props.children}</Box>
+        <Box m={4} flex={1}>{props.children}</Box>
       </Container>
     </ThemeProvider>
   );

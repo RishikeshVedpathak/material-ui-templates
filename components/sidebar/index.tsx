@@ -9,23 +9,24 @@ export default function Sidebar() {
 
   return (
     <>
-      {showDrawer && (
+      {showDrawer ? (
         <>
-          <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setDrawerOpen(!drawerOpen)}>
-            <MenuIcon />
-          </IconButton>
+          <Box>
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setDrawerOpen(!drawerOpen)}>
+              <MenuIcon />
+            </IconButton>
+          </Box>
 
-          <Drawer
-            anchor="left"
-            open={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-
-          >
+          <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
             <Box>
               <MenuItems />
             </Box>
           </Drawer>
         </>
+      ) : (
+        <Box borderRight={2}>
+          <MenuItems />
+        </Box>
       )}
     </>
   );

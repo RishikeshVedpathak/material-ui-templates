@@ -1,9 +1,9 @@
-import Navbar from 'components/navbar';
+import Layout from 'components/Layout';
 
 export default function Login() {
   return (
-    <Navbar>
+    <Layout>
       <div>Login Page</div>
-    </Navbar>
+    </Layout>
   );
 }
