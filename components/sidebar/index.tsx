@@ -9,33 +9,24 @@ export default function Sidebar() {
 
   return (
     <>
-      {showDrawer && (
+      {showDrawer ? (
         <>
-          <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setDrawerOpen(!drawerOpen)}>
-            <MenuIcon />
-          </IconButton>
+          <Box>
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setDrawerOpen(!drawerOpen)}>
+              <MenuIcon />
+            </IconButton>
+          </Box>
 
-          <Drawer
-            anchor="left"
-            open={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-            ModalProps={{
-              container: document.getElementById('layout'),
-              style: { position: 'absolute' },
-            }}
-            PaperProps={{
-              style: {
-                position: 'absolute',
-                // width: fullWidth ? '100%' : 'auto',
-                boxShadow: '-10px 1px 22px -8px rgba(0,0,0,0.32)',
-              },
-            }}
-          >
+          <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
             <Box>
               <MenuItems />
             </Box>
           </Drawer>
         </>
+      ) : (
+        <Box borderRight={2}>
+          <MenuItems />
+        </Box>
       )}
     </>
   );

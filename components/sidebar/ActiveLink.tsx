@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Link from 'next/link';
+import { useTheme } from '@material-ui/core/styles';
 
 type Props = {
   linkText: string;
@@ -10,16 +11,18 @@ type Props = {
 
 export default function ActiveLink({ linkText, href }: Props) {
   const router = useRouter();
+  const theme = useTheme();
+
   const style = {
     marginRight: 10,
-    borderRight: `4px solid ${router.asPath === href ? 'red' : 'transparent'}`,
+    borderRight: `4px solid ${router.asPath === href ? theme.palette.secondary.main : 'transparent'}`,
   };
 
   return (
-    <ListItem button style={style}>
-      <Link href={href}>
+    <Link href={href} passHref>
+      <ListItem button style={style}>
         <ListItemText primary={linkText} />
-      </Link>
-    </ListItem>
+      </ListItem>
+    </Link>
   );
 }

@@ -1,9 +1,12 @@
-import Navbar from 'components/navbar';
+import Layout from 'components/Layout';
+import { Typography } from '@material-ui/core';
 
 export default function Signup() {
   return (
-    <Navbar>
-      <div>Sign up Page</div>
-    </Navbar>
+    <Layout>
+      <>
+        <Typography variant="h4">Sign up Page</Typography>
+      </>
+    </Layout>
   );
 }

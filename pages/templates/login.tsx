@@ -1,9 +1,12 @@
-import Navbar from 'components/navbar';
+import Layout from 'components/Layout';
+import { Typography } from '@material-ui/core';
 
 export default function Login() {
   return (
-    <Navbar>
-      <div>Login Page</div>
-    </Navbar>
+    <Layout>
+      <>
+        <Typography variant="h4">Login Page</Typography>
+      </>
+    </Layout>
   );
 }
