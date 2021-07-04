@@ -37,6 +37,18 @@ export default function Layout(props: Props) {
         palette: {
           type: darkMode ? 'dark' : 'light',
         },
+        typography: {
+          h1: { fontFamily: 'Cinzel' },
+          h2: { fontFamily: 'Cinzel' },
+          h3: { fontFamily: 'Cinzel' },
+          h4: { fontFamily: 'Cinzel' },
+          h5: { fontFamily: 'Cinzel' },
+          h6: { fontFamily: 'Cinzel' },
+          subtitle1: { fontFamily: 'Montserrat' },
+          subtitle2: { fontFamily: 'Montserrat' },
+          body1: { fontFamily: 'Montserrat' },
+          body2: { fontFamily: 'Montserrat' },
+        },
       }),
     [darkMode]
   );
@@ -64,7 +76,9 @@ export default function Layout(props: Props) {
       <Toolbar />
       <Container maxWidth="lg" style={{ display: 'flex', flex: 1 }}>
         <Sidebar />
-        <Box m={4} flex={1}>{props.children}</Box>
+        <Box m={4} flex={1}>
+          {props.children}
+        </Box>
       </Container>
     </ThemeProvider>
   );
