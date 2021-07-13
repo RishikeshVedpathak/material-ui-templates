@@ -15,7 +15,7 @@ export default function ActiveLink({ linkText, href }: Props) {
 
   const style = {
     marginRight: 10,
-    borderRight: `4px solid ${router.asPath === href ? theme.palette.secondary.main : 'transparent'}`,
+    borderLeft: `4px solid ${router.asPath === href ? theme.palette.secondary.main : 'transparent'}`,
   };
 
   return (

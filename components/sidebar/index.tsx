@@ -24,7 +24,7 @@ export default function Sidebar() {
           </Drawer>
         </>
       ) : (
-        <Box borderRight={2}>
+        <Box borderRight={1}>
           <MenuItems />
         </Box>
       )}
