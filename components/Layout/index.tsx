@@ -11,6 +11,8 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import useToggle from 'hooks/useToggle';
 import ThemeSwitchButton from 'components/themeSwitchButton';
 import Sidebar from 'components/sidebar';
+import { SiMaterialUi } from 'react-icons/si';
+import Link from 'next/link';
 
 interface Props {
   window?: () => Window;
@@ -63,6 +65,9 @@ export default function Layout(props: Props) {
       <HideOnScroll {...props}>
         <AppBar>
           <Container maxWidth="lg" style={{ display: 'flex', alignItems: 'center' }}>
+            <Link href="/" passHref>
+              <SiMaterialUi size={32} cursor="pointer" />
+            </Link>
             <Toolbar style={{ flexGrow: 1 }}>
               <Typography variant="h6" style={{ flexGrow: 1 }}>
                 React Material-UI Templates
