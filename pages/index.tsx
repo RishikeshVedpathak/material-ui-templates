@@ -76,7 +76,11 @@ export default function Home() {
                 Ready to use react templates for faster and easier web development. Beautifully crafted responsive
                 templates build using{' '}
                 <Chip
-                  label={<Link href="https://material-ui.com/">Material-UI</Link>}
+                  label={
+                    <a href="https://material-ui.com/" target="_blank" rel="noreferrer">
+                      Material-UI
+                    </a>
+                  }
                   clickable
                   icon={<SiMaterialUi color={theme.palette.secondary.main} />}
                 />
