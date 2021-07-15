@@ -1,4 +1,4 @@
-import { Drawer, Box, IconButton, useMediaQuery } from '@material-ui/core';
+import { Drawer, IconButton, useMediaQuery, Paper } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import useToggle from 'hooks/useToggle';
 import MenuItems from './MenuItems';
@@ -11,22 +11,22 @@ export default function Sidebar() {
     <>
       {showDrawer ? (
         <>
-          <Box>
+          <div>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setDrawerOpen(!drawerOpen)}>
               <MenuIcon />
             </IconButton>
-          </Box>
+          </div>
 
           <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-            <Box>
+            <div>
               <MenuItems />
-            </Box>
+            </div>
           </Drawer>
         </>
       ) : (
-        <Box borderRight={1}>
+        <Paper>
           <MenuItems />
-        </Box>
+        </Paper>
       )}
     </>
   );
