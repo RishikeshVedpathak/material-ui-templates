@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -81,9 +80,7 @@ export default function Layout(props: Props) {
       <Toolbar />
       <Container maxWidth="lg" style={{ display: 'flex', flex: 1 }}>
         <Sidebar />
-        <Box m={4} flex={1}>
-          {props.children}
-        </Box>
+        <Container style={{ margin: '2rem', flex: 1 }}>{props.children}</Container>
       </Container>
     </ThemeProvider>
   );
