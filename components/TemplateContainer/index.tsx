@@ -5,10 +5,11 @@ import CodeIcon from '@material-ui/icons/Code';
 import useToggle from 'hooks/useToggle';
 
 export type Props = {
-  content?: React.ReactNode;
+  preview?: React.ReactNode;
+  code?: React.ReactNode;
 };
 
-export default function TemplateContainer({ content }: Props): JSX.Element {
+export default function TemplateContainer({ preview = '', code = '' }: Props): JSX.Element {
   const theme = useTheme();
   const [isPreviewMode, setIsPreviewMode] = useToggle(true);
 
@@ -39,7 +40,7 @@ export default function TemplateContainer({ content }: Props): JSX.Element {
         }
         style={{ borderBottom: `1px solid ${theme.palette.grey[600]}` }}
       />
-      <CardContent>{content}</CardContent>
+      <CardContent>{isPreviewMode ? preview : code}</CardContent>
     </Card>
   );
 }
